@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .series-item {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .series-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .series-item h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Search Results</h1>
+        <div class="series-list">
+            {% for series in series_list %}
+            <div class="series-item">
+                <h3>{{ series.title }}</h3>
+                <a href="{{ series.full_url }}">
+                    <img src="{{ series.img_url }}" alt="Series Image">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
